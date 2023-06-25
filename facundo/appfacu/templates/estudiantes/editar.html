@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Editar estudiante{% endblock %}
+
+{% block contenido %} 
+<div class="card">
+    <div class="card-header">
+        Modificar datos del Estudiante
+    </div> 
+    <div class="card-body">
+        <h4 class="card-title">Datos del estudiante</h4>
+        {% include 'estudiantes/form.html' %}
+    </div>
+</div>
+{% endblock %}  
