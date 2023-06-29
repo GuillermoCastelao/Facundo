@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from django.http import HttpResponse
 
-from .models import Alumnos
+from .models import Alumnos, Usuarios
 
 from .forms import EstudianteForm
 
@@ -35,3 +35,7 @@ def borrar_estudiante(request, idalum):
     estudiante = Alumnos.objects.get(idalum=idalum)
     estudiante.delete()
     return redirect('estudiantes')
+
+def usuarios(request):
+    usuarios = Usuarios.objects.all()
+    return render(request, 'usuarios/usuarios.html', {'usuarios':usuarios})

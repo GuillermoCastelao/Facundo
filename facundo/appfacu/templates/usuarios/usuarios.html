@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Usuarios{% endblock %}
+
+{% block contenido %} 
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="" role="button">Agregar Usuario</a>
+    </div>    
+    <div class="card-body">
+        <h4 class="card-title">Usuarios</h4>
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">IdUser</th>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Clave</th>
+                        <th scope="col">DNI</th>
+                        <th scope="col">Perfil1</th>
+                        <th scope="col">Perfil2</th>
+                        <th scope="col">Caduca</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for usuario in usuarios %}
+                    <tr class="">
+                        <td>{{ usuario.iduser }}</td>
+                        <td>{{ usuario.usuario }}</td>
+                        <td>{{ usuario.clave }}</td>
+                        <td>{{ usuario.dni }}</td>
+                        <td>{{ usuario.perfil }}</td>
+                        <td>{{ usuario.perfil2 }}</td>
+                        <td>{{ usuario.caduca }}</td>
+                        <td> <a name="" id="" class="btn btn-info" href="" role="button">Editar</a>
+                            | 
+                            <a name="" id="" class="btn btn-danger" href="" role="button">Borrar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div class="card-footer text-muted">
+        Barra de procesos...
+    </div>
+</div>
+{% endblock %}  
+
